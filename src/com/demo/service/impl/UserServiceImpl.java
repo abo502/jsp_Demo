@@ -15,6 +15,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public boolean Register(String name, String password,int age) {
+        return baseDao.register(name,password,age);
+    }
+
+    @Override
     public List<User> QueryUsers() {
         return baseDao.queryUsers();
     }

@@ -11,6 +11,7 @@ public class DbUtil {
     static PreparedStatement preparedStatement=null;
     static Statement statement=null;
 
+
     public static Connection getConnection(){
         try {
             Class.forName(DBDriver);

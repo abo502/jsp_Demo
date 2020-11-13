@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: A11200321050135
@@ -17,6 +18,9 @@
       <tr><td>密码</td><td><input type="password" name="passWord" ></td></tr>
       <tr><td colspan="2"><input type="submit"  value="登录"></td></tr>
     </table>
+    <div>
+      <a href="<c:url value="/register.jsp"/>">立即注册</a>
+    </div>
   </form>
   </body>
 </html>

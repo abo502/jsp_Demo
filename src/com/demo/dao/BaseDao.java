@@ -17,7 +17,7 @@ public class BaseDao {
             while (resultSet.next()) {
                 String name = resultSet.getString("name");
                 String pwd = resultSet.getString("password");
-                if(name.equals(username) && pwd.equals(password)){
+                if (name.equals(username) && pwd.equals(password)) {
                     return true;
                 }
             }
@@ -27,18 +27,24 @@ public class BaseDao {
         return false;
     }
 
-    public List<User> queryUsers(){
+    public boolean register(String username, String password, int age) {
+        String sql = "insert into user(name,password,age) values (?,?,?)";
+        int resultSet = MysqlHelper.executeUpdate(sql, username,password,age);
+        return resultSet != 0;
+    }
+
+    public List<User> queryUsers() {
         ArrayList<User> userList = new ArrayList<>();
-        String sql="select * from user";
+        String sql = "select * from user";
         ResultSet resultSet = MysqlHelper.executeQuery(sql);
         try {
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 User user = new User();
                 user.setId(resultSet.getInt("id"));
                 user.setName(resultSet.getString("name"));
                 userList.add(user);
             }
-        }catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return userList;
