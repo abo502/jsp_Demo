@@ -25,6 +25,7 @@ public class HomeServlet extends HttpServlet {
         boolean flag=new UserServiceImpl().Login(userName,passWord);
         PrintWriter writer = resp.getWriter();
         if (flag){
+            resp.sendRedirect("/show");
             writer.println("登录成功!!!");
         }else {
             writer.println("账号密码错误!!!");

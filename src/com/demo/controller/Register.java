@@ -25,7 +25,7 @@ public class Register extends HttpServlet {
         boolean flag=new UserServiceImpl().Register(userName,passWord,age);
         PrintWriter writer = resp.getWriter();
         if (flag){
-            resp.sendRedirect("/index");
+            resp.sendRedirect("/index.jsp");
             writer.println("注册成功!!!");
         }else {
             writer.println("注册失败!!!");

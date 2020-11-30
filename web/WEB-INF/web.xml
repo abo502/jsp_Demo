@@ -22,4 +22,14 @@
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>ShowData</servlet-name>
+        <servlet-class>com.demo.controller.ShowData</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ShowData</servlet-name>
+        <url-pattern>/show</url-pattern>
+    </servlet-mapping>
+
 </web-app>
